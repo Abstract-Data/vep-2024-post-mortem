@@ -1,7 +1,7 @@
 [project]
 name = "vep-2024-data-shaping"
 version = "0.1.0"
-description = "Add your description here"
+description = "Data transformations and reports for VEP 2024 Project"
 readme = "README.md"
 authors = [
     { name = "John R. Eakin", email = "dev@abstractdata.io" }
@@ -9,11 +9,10 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "jupyter>=1.1.1",
-    "pandas>=2.2.3",
+    "pandas>=1.5",
     "polars>=1.16.0",
     "pydantic>=2.10.3",
-    "vep-2024 ; sys_platform=='darwin'",
-   # "vep-2024 ; sys_platform=='linux'",
+    "vep-2024",
 ]
 
 [project.scripts]
@@ -25,6 +24,6 @@ build-backend = "hatchling.build"
 
 [tool.uv.sources]
 vep-2024 = [
-    { path = "../vep-2024", marker="sys_platform=='darwin'", editable=true},
-   # { git = "https://github.com/Abstract-Data/vep-2024.git", marker="sys_platform=='linux'"},
+    { path = "../vep-2024", marker="sys_platform=='Darwin'", editable=true},
+    { git = "https://github.com/Abstract-Data/vep-2024.git", marker="sys_platform=='Linux'"},
 ]
