@@ -208,6 +208,14 @@ def match_records_at_target_address(
             ic(f"Targets: {TARGET_COUNT:,}. Additional: {NON_TARGET_COUNT:,} ({(NON_TARGET_COUNT / total) * 100:.2f}%). Total: {total:,}")
 
 
+def exclude_cols_from_df(df: pd.DataFrame, cols: list[str] = None) -> list[str]:
+    if not cols:
+        cols = [
+                COUNTY_REF, SENATE_REF.result_ref.lower(), HOUSE_REF.result_ref.lower(), CONGRESSIONAL.result_ref.lower()
+            ]
+    return [x for x in df.columns if x not in cols]
+
+
 def office_type_results(office: DistrictRef, election_results_df: pd. DataFrame):
     ic("Creating turnout data for ", office.result_ref)
     _results = election_results_df[election_results_df[OFFICE_TYPE_REF] == office.result_ref]
@@ -333,12 +341,7 @@ matched_by_year = pd.crosstab(
     margins_name=VEP_TOTAL_VOTERS_REF
 ).reset_index().fillna(0).replace("", pd.NA).dropna()
 
-excluded_cols = [
-    x for x in matched_by_year.columns if x not in [
-        COUNTY_REF, SENATE_REF.result_ref.lower(), HOUSE_REF.result_ref.lower(), CONGRESSIONAL.result_ref.lower()
-    ]
-]
-
+excluded_cols = exclude_cols_from_df(matched_by_year)
 matched_by_year[excluded_cols] = matched_by_year[excluded_cols].astype(int)
 
 election_results = get_election_results()
