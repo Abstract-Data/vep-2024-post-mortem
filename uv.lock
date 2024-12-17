@@ -5,7 +5,8 @@ resolution-markers = [
     "python_full_version >= '3.13' and sys_platform == 'darwin'",
     "python_full_version < '3.13' and sys_platform == 'linux'",
     "python_full_version >= '3.13' and sys_platform == 'linux'",
-    "sys_platform != 'darwin' and sys_platform != 'linux'",
+    "python_full_version < '3.13' and sys_platform != 'darwin' and sys_platform != 'linux'",
+    "python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux'",
 ]
 
 [[package]]
@@ -2025,9 +2026,36 @@ wheels = [
 [[package]]
 name = "onepassword-sdk"
 version = "0.1.5"
-source = { git = "https://github.com/1Password/onepassword-sdk-python.git#5aedbaef2983bd5ccbff5a02107619b4d51dbc71" }
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.13' and sys_platform == 'darwin'",
+    "python_full_version >= '3.13' and sys_platform == 'darwin'",
+    "python_full_version < '3.13' and sys_platform != 'darwin' and sys_platform != 'linux'",
+    "python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux'",
+]
 dependencies = [
-    { name = "pydantic", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pydantic", marker = "sys_platform != 'linux'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1b/9f/bcf8694a07c2017d75b7749c80b8d238b987d97fa85f25a3fe934ea2c77d/onepassword_sdk-0.1.5.tar.gz", hash = "sha256:ac88fb75b397c231c594d87d21cdf8e55898e160a59d7e381499a38ccfe4e254", size = 24380119 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/3f/9cfa1da1b629562ce228a61666be73389d3dd15c0b99851e92b0351b070c/onepassword_sdk-0.1.5-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:71773cf44db431695a821c797d76adde72c082bafc784efa7e4688fdc1e4912b", size = 5092157 },
+    { url = "https://files.pythonhosted.org/packages/08/10/f2e87cc24f4132299f7ce0c2289b62643c983f90091cf6c9540bfa9c0bfe/onepassword_sdk-0.1.5-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:74a3c7458e7adcf344f5c1e9f3f4adb495086cc92f184cb210a574551b57c79b", size = 4663964 },
+    { url = "https://files.pythonhosted.org/packages/db/12/580979d47b315ad06de31fb757f6fe3d0de1386702852f1617f851f5178a/onepassword_sdk-0.1.5-cp312-cp312-win_amd64.whl", hash = "sha256:6af9bea09989e59958284fd333395a1867d759235bdebb833dcfe73f721d0dab", size = 4475912 },
+    { url = "https://files.pythonhosted.org/packages/91/9e/6842be66ce047ed9a8d3eb9b9f5e12961fe66d20d9f73b1c38b3a637cf62/onepassword_sdk-0.1.5-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:e9c8cf43979cd4cd4ab45ac35027099d4a59498e0d869180a6807506bbe5ea81", size = 5092156 },
+    { url = "https://files.pythonhosted.org/packages/1f/79/dc7123950d51eedbbf3c52b870fdd26c46dc673a6a49f24632e0cc3691f5/onepassword_sdk-0.1.5-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:e367be8587bc0f54967d1e1acc216edd497c3421e07e9168e66f3160086c1eb4", size = 4663966 },
+    { url = "https://files.pythonhosted.org/packages/06/31/67e0ccce1ea8f58c26eb7527ea2065dfe07af74eec82019c2b56e01ea1bd/onepassword_sdk-0.1.5-cp313-cp313-win_amd64.whl", hash = "sha256:deb761be96e49b11f636a540bfe16509003acfeb1e5cc75669b02ba0e087069e", size = 4475912 },
+]
+
+[[package]]
+name = "onepassword-sdk"
+version = "0.1.5"
+source = { git = "https://github.com/1Password/onepassword-sdk-python.git#5aedbaef2983bd5ccbff5a02107619b4d51dbc71" }
+resolution-markers = [
+    "python_full_version < '3.13' and sys_platform == 'linux'",
+    "python_full_version >= '3.13' and sys_platform == 'linux'",
+]
+dependencies = [
+    { name = "pydantic", marker = "sys_platform == 'linux'" },
 ]
 
 [[package]]
@@ -2668,9 +2696,9 @@ name = "pydantic"
 version = "2.9.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "annotated-types", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "pydantic-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "annotated-types" },
+    { name = "pydantic-core" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/a9/b7/d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30/pydantic-2.9.2.tar.gz", hash = "sha256:d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f", size = 769917 }
 wheels = [
@@ -2687,7 +2715,7 @@ name = "pydantic-core"
 version = "2.23.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e2/aa/6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3/pydantic_core-2.23.4.tar.gz", hash = "sha256:2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863", size = 402156 }
 wheels = [
@@ -2701,6 +2729,8 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/89/4d/3079d00c47f22c9a9a8220db088b309ad6e600a73d7a69473e3a8e5e3ea3/pydantic_core-2.23.4-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:68665f4c17edcceecc112dfed5dbe6f92261fb9d6054b47d01bf6371a6196126", size = 1917453 },
     { url = "https://files.pythonhosted.org/packages/e9/88/9df5b7ce880a4703fcc2d76c8c2d8eb9f861f79d0c56f4b8f5f2607ccec8/pydantic_core-2.23.4-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:20152074317d9bed6b7a95ade3b7d6054845d70584216160860425f4fbd5ee9e", size = 1968793 },
     { url = "https://files.pythonhosted.org/packages/e3/b9/41f7efe80f6ce2ed3ee3c2dcfe10ab7adc1172f778cc9659509a79518c43/pydantic_core-2.23.4-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:9261d3ce84fa1d38ed649c3638feefeae23d32ba9182963e465d58d62203bd24", size = 2116872 },
+    { url = "https://files.pythonhosted.org/packages/63/08/b59b7a92e03dd25554b0436554bf23e7c29abae7cce4b1c459cd92746811/pydantic_core-2.23.4-cp312-none-win32.whl", hash = "sha256:4ba762ed58e8d68657fc1281e9bb72e1c3e79cc5d464be146e260c541ec12d84", size = 1738535 },
+    { url = "https://files.pythonhosted.org/packages/88/8d/479293e4d39ab409747926eec4329de5b7129beaedc3786eca070605d07f/pydantic_core-2.23.4-cp312-none-win_amd64.whl", hash = "sha256:97df63000f4fea395b2824da80e169731088656d1818a11b95f3b173747b6cd9", size = 1917992 },
     { url = "https://files.pythonhosted.org/packages/ad/ef/16ee2df472bf0e419b6bc68c05bf0145c49247a1095e85cee1463c6a44a1/pydantic_core-2.23.4-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:7530e201d10d7d14abce4fb54cfe5b94a0aefc87da539d0346a484ead376c3cc", size = 1856143 },
     { url = "https://files.pythonhosted.org/packages/da/fa/bc3dbb83605669a34a93308e297ab22be82dfb9dcf88c6cf4b4f264e0a42/pydantic_core-2.23.4-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:df933278128ea1cd77772673c73954e53a1c95a4fdf41eef97c2b779271bd0bd", size = 1770063 },
     { url = "https://files.pythonhosted.org/packages/4e/48/e813f3bbd257a712303ebdf55c8dc46f9589ec74b384c9f652597df3288d/pydantic_core-2.23.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0cb3da3fd1b6a5d0279a01877713dbda118a2a4fc6f0d821a57da2e464793f05", size = 1790013 },
@@ -2711,6 +2741,8 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/7c/45/bdce5779b59f468bdf262a5bc9eecbae87f271c51aef628d8c073b4b4b4c/pydantic_core-2.23.4-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:0dff76e0602ca7d4cdaacc1ac4c005e0ce0dcfe095d5b5259163a80d3a10d327", size = 1916994 },
     { url = "https://files.pythonhosted.org/packages/d8/fa/c648308fe711ee1f88192cad6026ab4f925396d1293e8356de7e55be89b5/pydantic_core-2.23.4-cp313-cp313-musllinux_1_1_aarch64.whl", hash = "sha256:7d32706badfe136888bdea71c0def994644e09fff0bfe47441deaed8e96fdbc6", size = 1968877 },
     { url = "https://files.pythonhosted.org/packages/16/16/b805c74b35607d24d37103007f899abc4880923b04929547ae68d478b7f4/pydantic_core-2.23.4-cp313-cp313-musllinux_1_1_x86_64.whl", hash = "sha256:ed541d70698978a20eb63d8c5d72f2cc6d7079d9d90f6b50bad07826f1320f5f", size = 2116814 },
+    { url = "https://files.pythonhosted.org/packages/d1/58/5305e723d9fcdf1c5a655e6a4cc2a07128bf644ff4b1d98daf7a9dbf57da/pydantic_core-2.23.4-cp313-none-win32.whl", hash = "sha256:3d5639516376dce1940ea36edf408c554475369f5da2abd45d44621cb616f769", size = 1738360 },
+    { url = "https://files.pythonhosted.org/packages/a5/ae/e14b0ff8b3f48e02394d8acd911376b7b66e164535687ef7dc24ea03072f/pydantic_core-2.23.4-cp313-none-win_amd64.whl", hash = "sha256:5a1504ad17ba4210df3a045132a7baeeba5a200e930f57512ee02909fc5c4cb5", size = 1919411 },
 ]
 
 [[package]]
@@ -3800,7 +3832,7 @@ dependencies = [
     { name = "memory-profiler", marker = "sys_platform == 'linux'" },
     { name = "mkdocs", marker = "sys_platform == 'linux'" },
     { name = "mkdocstrings", version = "0.27.0", source = { registry = "https://pypi.org/simple" }, extra = ["python"], marker = "sys_platform == 'linux'" },
-    { name = "onepassword-sdk", marker = "sys_platform == 'linux'" },
+    { name = "onepassword-sdk", version = "0.1.5", source = { git = "https://github.com/1Password/onepassword-sdk-python.git#5aedbaef2983bd5ccbff5a02107619b4d51dbc71" }, marker = "sys_platform == 'linux'" },
     { name = "opentelemetry-instrumentation-aiohttp-client", marker = "sys_platform == 'linux'" },
     { name = "opentelemetry-instrumentation-httpx", marker = "sys_platform == 'linux'" },
     { name = "opentelemetry-instrumentation-jinja2", marker = "sys_platform == 'linux'" },
@@ -3851,7 +3883,6 @@ dependencies = [
     { name = "memory-profiler", marker = "sys_platform == 'darwin'" },
     { name = "mkdocs", marker = "sys_platform == 'darwin'" },
     { name = "mkdocstrings", version = "0.18.1", source = { registry = "https://pypi.org/simple" }, extra = ["python"], marker = "sys_platform == 'darwin'" },
-    { name = "onepassword-sdk", marker = "sys_platform == 'darwin'" },
     { name = "opentelemetry-instrumentation-aiohttp-client", marker = "sys_platform == 'darwin'" },
     { name = "opentelemetry-instrumentation-httpx", marker = "sys_platform == 'darwin'" },
     { name = "opentelemetry-instrumentation-jinja2", marker = "sys_platform == 'darwin'" },
@@ -3894,7 +3925,6 @@ requires-dist = [
     { name = "memory-profiler", specifier = ">=0.61.0,<0.62.0" },
     { name = "mkdocs", specifier = ">=1.5.3,<2.0.0" },
     { name = "mkdocstrings", extras = ["python"], specifier = ">=0.18.0,<0.19.0" },
-    { name = "onepassword-sdk", git = "https://github.com/1Password/onepassword-sdk-python.git" },
     { name = "opentelemetry-instrumentation-aiohttp-client", specifier = ">=0.48b0,<0.49.0" },
     { name = "opentelemetry-instrumentation-httpx", specifier = ">=0.48b0,<0.49.0" },
     { name = "opentelemetry-instrumentation-jinja2", specifier = ">=0.48b0,<0.49.0" },
@@ -3924,6 +3954,8 @@ name = "vep-2024-data-shaping"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "onepassword-sdk", version = "0.1.5", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "onepassword-sdk", version = "0.1.5", source = { git = "https://github.com/1Password/onepassword-sdk-python.git#5aedbaef2983bd5ccbff5a02107619b4d51dbc71" }, marker = "sys_platform == 'linux'" },
     { name = "polars" },
     { name = "vep-2024", version = "0.1.0", source = { git = "https://github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale#4a901b5436258650593d786be7dcaec2345d3409" }, marker = "sys_platform == 'linux'" },
     { name = "vep-2024", version = "0.1.0", source = { editable = "../vep-2024" }, marker = "sys_platform == 'darwin'" },
@@ -3931,6 +3963,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "onepassword-sdk", specifier = ">=0.1.5" },
     { name = "polars", specifier = ">=1.16.0" },
     { name = "vep-2024", marker = "sys_platform == 'darwin'", editable = "../vep-2024" },
     { name = "vep-2024", marker = "sys_platform == 'linux'", git = "https://github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale" },

@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.12.8"
 dependencies = [
+    "onepassword-sdk>=0.1.5",
     "polars>=1.16.0",
     "vep-2024; sys_platform=='darwin'",
     "vep-2024; sys_platform=='linux'",
@@ -23,5 +24,14 @@ build-backend = "hatchling.build"
 [tool.uv.sources]
 vep-2024 = [
     { path = "../vep-2024", marker="sys_platform=='darwin'", editable=true},
-    { git = "https://${GITHUB_TOKEN}@github.com/Abstract-Data/vep-2024.git", marker="sys_platform=='linux'", branch="disobey-grumpy-kale"},
+    { git = "https://${UV_GITHUB_TOKEN}@github.com/Abstract-Data/vep-2024.git", marker="sys_platform=='linux'", branch="disobey-grumpy-kale"},
+]
+state-voterfiles = [
+    { git = "https://${UV_GITHUB_TOKEN}@github.com/Abstract-Data/state-voterfiles.git", marker="sys_platform=='linux'" },
+]
+vep-validation-tools = [
+    { git = "https://${UV_GITHUB_TOKEN}@github.com/Abstract-Data/vep-validation-tools.git", marker="sys_platform=='linux'" },
+]
+election-utils = [
+    { git = "https://${UV_GITHUB_TOKEN}@github.com/jreakin/jre-election-utils.git", marker="sys_platform=='linux'" },
 ]

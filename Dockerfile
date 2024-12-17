@@ -2,16 +2,15 @@
 FROM python:3.9-slim
 
 # Install git
-RUN apt-get update && apt-get install -y git
-
-# Set environment variables
-ARG GITHUB_TOKEN
-ENV GITHUB_TOKEN=${GITHUB_TOKEN}
+RUN apt-get update && apt-get install -y git curl
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+RUN pip install uv
 
 # Set the working directory in the container
-# Copy the project files
-COPY . /app
 WORKDIR /app
+
+# Copy the project files
+COPY . .
 
 
 # Enable bytecode compilation
@@ -33,16 +32,12 @@ ENV UV_COMPILE_BYTECODE=1
 # RUN uv sync --frozen --no-install-project --no-dev
 
 # Place executables in the environment at the front of the path
-ENV PATH="/app/.venv/bin:$PATH"
+ENV PATH="/root/.local/bin:$PATH"
 
-RUN --mount=type=secret,id=github_token \
-    GITHUB_TOKEN=$(cat /run/secrets/github_token)
-
-# Install the project's dependencies using the lockfile and settings
-RUN pip install uv
-RUN uv sync --frozen --no-install-project --no-dev
-# # Copy the rest of the application code into the container
-# COPY . .
+# Use build-time secret for GitHub token
+RUN --mount=type=ssh \
+    bash -c 'git config --global url."git@github.com:".insteadOf "https://github.com/" && \
+    uv sync --frozen --no-install-project --no-dev'
 
 # Command to run the application using uvicorn
 CMD ["uv", "run", "./processing.py"]
