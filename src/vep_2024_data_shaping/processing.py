@@ -11,6 +11,7 @@ import numpy as np
 from pathlib import Path
 from icecream import ic
 from tqdm import tqdm
+import polars as pl
 
 from vep_2024.processing.funcs.loaders.state_loader import StateVoterFile, CreateRecords
 from vep_validation_tools.pydantic_models.cleanup_model import PreValidationCleanUp
@@ -170,7 +171,7 @@ def exclude_cols_from_df(df: pd.DataFrame, cols: list[str] = None) -> list[str]:
             VUID_REF
         ]
     return [x for x in list(df.columns) if x not in cols]
-
+n
 
 
 def get_previous_vep_year_vuids(rec_ls: list = None) -> Generator[tuple[int, str], None, None]:
@@ -462,7 +463,19 @@ filtered_results = all_results_group[
     ]
 # last_month_texas_voterfile = StateVoterFile(state='texas')
 # last_month = last_month_texas_voterfile.read(VOTERFILE_FOLDER / 'texas/texasnovember2024.csv')
-# last_month_texas_voterfile.validate(x for x in last_month if int(x['EDR']) >= 20190701)
+# last_month_texas_voterfile.validate(x for x in last_month if int(x['EDR']) >= 20191101)
+
+# new_voters_since_2019 = pl.scan_csv(VOTERFILE_FOLDER / 'texas/texasnovember2024.csv', infer_schema=False)
+# new_voters_since_2019 = new_voters_since_2019.with_columns(
+#     pl.col('EDR').str.strptime(pl.Date, '%Y%m%d')
+# )
+# new_voters_by_year = (
+#     new_voters_since_2019
+#     .filter(pl.col('EDR') >= pl.Date('2019-11-01'))
+#     .with_column(pl.col('EDR').dt.year().alias('year'))
+#     .groupby('year')
+#     .count()
+# )
 #
 # # test = next(last_month_texas_voterfile.validation.valid)
 # RECORD_CREATOR = CreateRecords()
