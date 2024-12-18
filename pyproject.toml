@@ -22,6 +22,6 @@ build-backend = "hatchling.build"
 
 [tool.uv.sources]
 vep-2024 = [
-    { path = "../vep-2024", marker="sys_platform=='darwin'", editable=true},
+    { path = "Users/johneakin/PyCharmProjects/vep-2024", marker="sys_platform=='darwin'", editable=true},
     { git = "git+ssh://git@github.com/Abstract-Data/vep-2024.git", marker="sys_platform=='linux'", branch="disobey-grumpy-kale"},
 ]
