@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 # Install git
-RUN apt-get update && apt-get install -y git curl
+RUN apt-get update && apt-get install -y git curl openssh-client
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 RUN pip install uv
 
@@ -34,10 +34,13 @@ ENV UV_COMPILE_BYTECODE=1
 # Place executables in the environment at the front of the path
 ENV PATH="/root/.local/bin:$PATH"
 
+# Add GitHub to known hosts
+RUN mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 # Use build-time secret for GitHub token
 RUN --mount=type=ssh \
     bash -c 'git config --global url."git@github.com:".insteadOf "https://github.com/" && \
     uv sync --frozen --no-install-project --no-dev'
-
+    
 # Command to run the application using uvicorn
 CMD ["uv", "run", "./processing.py"]
