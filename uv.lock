@@ -629,22 +629,7 @@ wheels = [
 [[package]]
 name = "election-utils"
 version = "0.1.0"
-source = { git = "https://github.com/jreakin/jre-election-utils.git#8f5756d300ccf62fecf46ba7a663c804b5bb900d" }
-resolution-markers = [
-    "python_full_version < '3.13' and sys_platform == 'linux'",
-    "python_full_version >= '3.13' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "icecream", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "pydantic-extra-types", marker = "sys_platform == 'linux'" },
-    { name = "sqlmodel", marker = "sys_platform == 'linux'" },
-]
-
-[[package]]
-name = "election-utils"
-version = "0.1.0"
-source = { editable = "../election-utils" }
+source = { git = "ssh://git@github.com/Abstract-Data/state-voterfiles.git?subdirectory=..%2F..%2F..%2F..%2F..%2F..%2FPyCharmProjects%2Felection-utils#221c35e800c8f975a63903ddf178aed76fbfa302" }
 resolution-markers = [
     "python_full_version < '3.13' and sys_platform == 'darwin'",
     "python_full_version >= '3.13' and sys_platform == 'darwin'",
@@ -656,12 +641,19 @@ dependencies = [
     { name = "sqlmodel", marker = "sys_platform == 'darwin'" },
 ]
 
-[package.metadata]
-requires-dist = [
-    { name = "icecream", specifier = "==2.1.3" },
-    { name = "pydantic", specifier = "==2.9.2" },
-    { name = "pydantic-extra-types", specifier = "==2.9.0" },
-    { name = "sqlmodel", specifier = "==0.0.21" },
+[[package]]
+name = "election-utils"
+version = "0.1.0"
+source = { git = "ssh://git@github.com/jreakin/jre-election-utils.git#d870bf0bee76be81c2ab6a8f17b16d59c4f283a7" }
+resolution-markers = [
+    "python_full_version < '3.13' and sys_platform == 'linux'",
+    "python_full_version >= '3.13' and sys_platform == 'linux'",
+]
+dependencies = [
+    { name = "icecream", marker = "sys_platform == 'linux'" },
+    { name = "pydantic", marker = "sys_platform == 'linux'" },
+    { name = "pydantic-extra-types", marker = "sys_platform == 'linux'" },
+    { name = "sqlmodel", marker = "sys_platform == 'linux'" },
 ]
 
 [[package]]
@@ -835,21 +827,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/11/4b/0a002eea91be6048a2b5d53c5f1b4dafd57ba2e36eea961d05086d7c28ce/fuzzywuzzy-0.18.0.tar.gz", hash = "sha256:45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8", size = 28888 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/43/ff/74f23998ad2f93b945c0309f825be92e04e0348e062026998b5eefef4c33/fuzzywuzzy-0.18.0-py2.py3-none-any.whl", hash = "sha256:928244b28db720d1e0ee7587acf660ea49d7e4c632569cad4f1cd7e68a5f0993", size = 18272 },
-]
-
-[[package]]
-name = "gensim"
-version = "4.3.3"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "numpy", marker = "sys_platform == 'linux'" },
-    { name = "scipy", marker = "sys_platform == 'linux'" },
-    { name = "smart-open", marker = "sys_platform == 'linux'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/ec/bc/36ce4d510085cf150f17d79bb5e88cde942aeba2a894aed5893812ea1e6d/gensim-4.3.3.tar.gz", hash = "sha256:84852076a6a3d88d7dac5be245e24c21c3b819b565e14c1b61fa3e5ee76dcf57", size = 23258708 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e0/b7/a316ba52548ca405413c23967c1c6c77d00f82cf6b0cb63d268001e023aa/gensim-4.3.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7198987116373ab99f034b292a04ac841531d12b56345851c98b40a3fcd93a85", size = 26487104 },
-    { url = "https://files.pythonhosted.org/packages/1a/07/7a0d5e6cab4da2769c8018f2472690ccb8cab191bf2fe46342dfd627486b/gensim-4.3.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6237a50de4da7a037b19b2b6c430b6537243dcdedebf94afeb089e951953e601", size = 26606101 },
 ]
 
 [[package]]
@@ -1755,18 +1732,14 @@ wheels = [
 name = "mkdocstrings"
 version = "0.18.1"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.13' and sys_platform == 'darwin'",
-    "python_full_version >= '3.13' and sys_platform == 'darwin'",
-]
 dependencies = [
-    { name = "jinja2", marker = "sys_platform == 'darwin'" },
-    { name = "markdown", marker = "sys_platform == 'darwin'" },
-    { name = "markupsafe", marker = "sys_platform == 'darwin'" },
-    { name = "mkdocs", marker = "sys_platform == 'darwin'" },
-    { name = "mkdocs-autorefs", marker = "sys_platform == 'darwin'" },
-    { name = "mkdocstrings-python-legacy", marker = "sys_platform == 'darwin'" },
-    { name = "pymdown-extensions", marker = "sys_platform == 'darwin'" },
+    { name = "jinja2", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "markdown", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "markupsafe", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "mkdocs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "mkdocs-autorefs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "mkdocstrings-python-legacy", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pymdown-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/4b/9d/a2386c5371531ffbc227f0a2f48524a056addd051af34abddf86f1a89f54/mkdocstrings-0.18.1.tar.gz", hash = "sha256:fb7c91ce7e3ab70488d3fa6c073a4f827cdc319042f682ef8ea95459790d64fc", size = 27474 }
 wheels = [
@@ -1775,48 +1748,16 @@ wheels = [
 
 [package.optional-dependencies]
 python = [
-    { name = "mkdocstrings-python", version = "0.6.6", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'darwin'" },
-]
-
-[[package]]
-name = "mkdocstrings"
-version = "0.27.0"
-source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.13' and sys_platform == 'linux'",
-    "python_full_version >= '3.13' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "click", marker = "sys_platform == 'linux'" },
-    { name = "jinja2", marker = "sys_platform == 'linux'" },
-    { name = "markdown", marker = "sys_platform == 'linux'" },
-    { name = "markupsafe", marker = "sys_platform == 'linux'" },
-    { name = "mkdocs", marker = "sys_platform == 'linux'" },
-    { name = "mkdocs-autorefs", marker = "sys_platform == 'linux'" },
-    { name = "platformdirs", marker = "sys_platform == 'linux'" },
-    { name = "pymdown-extensions", marker = "sys_platform == 'linux'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/e2/5a/5de70538c2cefae7ac3a15b5601e306ef3717290cb2aab11d51cbbc2d1c0/mkdocstrings-0.27.0.tar.gz", hash = "sha256:16adca6d6b0a1f9e0c07ff0b02ced8e16f228a9d65a37c063ec4c14d7b76a657", size = 94830 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/cd/10/4c27c3063c2b3681a4b7942f8dbdeb4fa34fecb2c19b594e7345ebf4f86f/mkdocstrings-0.27.0-py3-none-any.whl", hash = "sha256:6ceaa7ea830770959b55a16203ac63da24badd71325b96af950e59fd37366332", size = 30658 },
-]
-
-[package.optional-dependencies]
-python = [
-    { name = "mkdocstrings-python", version = "1.12.2", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
+    { name = "mkdocstrings-python", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 
 [[package]]
 name = "mkdocstrings-python"
 version = "0.6.6"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.13' and sys_platform == 'darwin'",
-    "python_full_version >= '3.13' and sys_platform == 'darwin'",
-]
 dependencies = [
-    { name = "griffe", marker = "sys_platform == 'darwin'" },
-    { name = "mkdocstrings", version = "0.18.1", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'darwin'" },
+    { name = "griffe", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "mkdocstrings", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f8/15/70beb7c41684e4a2328fe5b4cc2b5ab96f7f2c3e21edcd99aa76af3a6d57/mkdocstrings-python-0.6.6.tar.gz", hash = "sha256:37281696b9f199624ae420e0625b6659b7fdfbea736618bce7fd978682dea3b1", size = 21629 }
 wheels = [
@@ -1824,30 +1765,12 @@ wheels = [
 ]
 
 [[package]]
-name = "mkdocstrings-python"
-version = "1.12.2"
-source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.13' and sys_platform == 'linux'",
-    "python_full_version >= '3.13' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "griffe", marker = "sys_platform == 'linux'" },
-    { name = "mkdocs-autorefs", marker = "sys_platform == 'linux'" },
-    { name = "mkdocstrings", version = "0.27.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/23/ec/cb6debe2db77f1ef42b25b21d93b5021474de3037cd82385e586aee72545/mkdocstrings_python-1.12.2.tar.gz", hash = "sha256:7a1760941c0b52a2cd87b960a9e21112ffe52e7df9d0b9583d04d47ed2e186f3", size = 168207 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/5b/c1/ac524e1026d9580cbc654b5d19f5843c8b364a66d30f956372cd09fd2f92/mkdocstrings_python-1.12.2-py3-none-any.whl", hash = "sha256:7f7d40d6db3cb1f5d19dbcd80e3efe4d0ba32b073272c0c0de9de2e604eda62a", size = 111759 },
-]
-
-[[package]]
 name = "mkdocstrings-python-legacy"
 version = "0.2.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "mkdocstrings", version = "0.18.1", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'darwin'" },
-    { name = "pytkdocs", marker = "sys_platform == 'darwin'" },
+    { name = "mkdocstrings", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pytkdocs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/55/1a/91c851a7e9b1ee8b7e30c4b18dbc05f62b68d02e9c1bc8f206f47851c07f/mkdocstrings-python-legacy-0.2.2.tar.gz", hash = "sha256:f0e7ec6a19750581b752acb38f6b32fcd1efe006f14f6703125d2c2c9a5c6f02", size = 17198 }
 wheels = [
@@ -2021,41 +1944,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/0f/50/de23fde84e45f5c4fda2488c759b69990fd4512387a8632860f3ac9cd225/numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:675d61ffbfa78604709862923189bad94014bef562cc35cf61d3a07bba02a7ed", size = 17950613 },
     { url = "https://files.pythonhosted.org/packages/4c/0c/9c603826b6465e82591e05ca230dfc13376da512b25ccd0894709b054ed0/numpy-1.26.4-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:ab47dbe5cc8210f55aa58e4805fe224dac469cde56b9f731a4c098b91917159a", size = 13572172 },
     { url = "https://files.pythonhosted.org/packages/76/8c/2ba3902e1a0fc1c74962ea9bb33a534bb05984ad7ff9515bf8d07527cadd/numpy-1.26.4-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:1dda2e7b4ec9dd512f84935c5f126c8bd8b9f2fc001e9f54af255e8c5f16b0e0", size = 17786643 },
-]
-
-[[package]]
-name = "onepassword-sdk"
-version = "0.1.5"
-source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.13' and sys_platform == 'darwin'",
-    "python_full_version >= '3.13' and sys_platform == 'darwin'",
-    "python_full_version < '3.13' and sys_platform != 'darwin' and sys_platform != 'linux'",
-    "python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux'",
-]
-dependencies = [
-    { name = "pydantic", marker = "sys_platform != 'linux'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/1b/9f/bcf8694a07c2017d75b7749c80b8d238b987d97fa85f25a3fe934ea2c77d/onepassword_sdk-0.1.5.tar.gz", hash = "sha256:ac88fb75b397c231c594d87d21cdf8e55898e160a59d7e381499a38ccfe4e254", size = 24380119 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/3f/3f/9cfa1da1b629562ce228a61666be73389d3dd15c0b99851e92b0351b070c/onepassword_sdk-0.1.5-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:71773cf44db431695a821c797d76adde72c082bafc784efa7e4688fdc1e4912b", size = 5092157 },
-    { url = "https://files.pythonhosted.org/packages/08/10/f2e87cc24f4132299f7ce0c2289b62643c983f90091cf6c9540bfa9c0bfe/onepassword_sdk-0.1.5-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:74a3c7458e7adcf344f5c1e9f3f4adb495086cc92f184cb210a574551b57c79b", size = 4663964 },
-    { url = "https://files.pythonhosted.org/packages/db/12/580979d47b315ad06de31fb757f6fe3d0de1386702852f1617f851f5178a/onepassword_sdk-0.1.5-cp312-cp312-win_amd64.whl", hash = "sha256:6af9bea09989e59958284fd333395a1867d759235bdebb833dcfe73f721d0dab", size = 4475912 },
-    { url = "https://files.pythonhosted.org/packages/91/9e/6842be66ce047ed9a8d3eb9b9f5e12961fe66d20d9f73b1c38b3a637cf62/onepassword_sdk-0.1.5-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:e9c8cf43979cd4cd4ab45ac35027099d4a59498e0d869180a6807506bbe5ea81", size = 5092156 },
-    { url = "https://files.pythonhosted.org/packages/1f/79/dc7123950d51eedbbf3c52b870fdd26c46dc673a6a49f24632e0cc3691f5/onepassword_sdk-0.1.5-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:e367be8587bc0f54967d1e1acc216edd497c3421e07e9168e66f3160086c1eb4", size = 4663966 },
-    { url = "https://files.pythonhosted.org/packages/06/31/67e0ccce1ea8f58c26eb7527ea2065dfe07af74eec82019c2b56e01ea1bd/onepassword_sdk-0.1.5-cp313-cp313-win_amd64.whl", hash = "sha256:deb761be96e49b11f636a540bfe16509003acfeb1e5cc75669b02ba0e087069e", size = 4475912 },
-]
-
-[[package]]
-name = "onepassword-sdk"
-version = "0.1.5"
-source = { git = "https://github.com/1Password/onepassword-sdk-python.git#5aedbaef2983bd5ccbff5a02107619b4d51dbc71" }
-resolution-markers = [
-    "python_full_version < '3.13' and sys_platform == 'linux'",
-    "python_full_version >= '3.13' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
 ]
 
 [[package]]
@@ -2696,9 +2584,9 @@ name = "pydantic"
 version = "2.9.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "annotated-types" },
-    { name = "pydantic-core" },
-    { name = "typing-extensions" },
+    { name = "annotated-types", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pydantic-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/a9/b7/d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30/pydantic-2.9.2.tar.gz", hash = "sha256:d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f", size = 769917 }
 wheels = [
@@ -2715,7 +2603,7 @@ name = "pydantic-core"
 version = "2.23.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions" },
+    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e2/aa/6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3/pydantic_core-2.23.4.tar.gz", hash = "sha256:2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863", size = 402156 }
 wheels = [
@@ -2729,8 +2617,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/89/4d/3079d00c47f22c9a9a8220db088b309ad6e600a73d7a69473e3a8e5e3ea3/pydantic_core-2.23.4-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:68665f4c17edcceecc112dfed5dbe6f92261fb9d6054b47d01bf6371a6196126", size = 1917453 },
     { url = "https://files.pythonhosted.org/packages/e9/88/9df5b7ce880a4703fcc2d76c8c2d8eb9f861f79d0c56f4b8f5f2607ccec8/pydantic_core-2.23.4-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:20152074317d9bed6b7a95ade3b7d6054845d70584216160860425f4fbd5ee9e", size = 1968793 },
     { url = "https://files.pythonhosted.org/packages/e3/b9/41f7efe80f6ce2ed3ee3c2dcfe10ab7adc1172f778cc9659509a79518c43/pydantic_core-2.23.4-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:9261d3ce84fa1d38ed649c3638feefeae23d32ba9182963e465d58d62203bd24", size = 2116872 },
-    { url = "https://files.pythonhosted.org/packages/63/08/b59b7a92e03dd25554b0436554bf23e7c29abae7cce4b1c459cd92746811/pydantic_core-2.23.4-cp312-none-win32.whl", hash = "sha256:4ba762ed58e8d68657fc1281e9bb72e1c3e79cc5d464be146e260c541ec12d84", size = 1738535 },
-    { url = "https://files.pythonhosted.org/packages/88/8d/479293e4d39ab409747926eec4329de5b7129beaedc3786eca070605d07f/pydantic_core-2.23.4-cp312-none-win_amd64.whl", hash = "sha256:97df63000f4fea395b2824da80e169731088656d1818a11b95f3b173747b6cd9", size = 1917992 },
     { url = "https://files.pythonhosted.org/packages/ad/ef/16ee2df472bf0e419b6bc68c05bf0145c49247a1095e85cee1463c6a44a1/pydantic_core-2.23.4-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:7530e201d10d7d14abce4fb54cfe5b94a0aefc87da539d0346a484ead376c3cc", size = 1856143 },
     { url = "https://files.pythonhosted.org/packages/da/fa/bc3dbb83605669a34a93308e297ab22be82dfb9dcf88c6cf4b4f264e0a42/pydantic_core-2.23.4-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:df933278128ea1cd77772673c73954e53a1c95a4fdf41eef97c2b779271bd0bd", size = 1770063 },
     { url = "https://files.pythonhosted.org/packages/4e/48/e813f3bbd257a712303ebdf55c8dc46f9589ec74b384c9f652597df3288d/pydantic_core-2.23.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0cb3da3fd1b6a5d0279a01877713dbda118a2a4fc6f0d821a57da2e464793f05", size = 1790013 },
@@ -2741,8 +2627,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/7c/45/bdce5779b59f468bdf262a5bc9eecbae87f271c51aef628d8c073b4b4b4c/pydantic_core-2.23.4-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:0dff76e0602ca7d4cdaacc1ac4c005e0ce0dcfe095d5b5259163a80d3a10d327", size = 1916994 },
     { url = "https://files.pythonhosted.org/packages/d8/fa/c648308fe711ee1f88192cad6026ab4f925396d1293e8356de7e55be89b5/pydantic_core-2.23.4-cp313-cp313-musllinux_1_1_aarch64.whl", hash = "sha256:7d32706badfe136888bdea71c0def994644e09fff0bfe47441deaed8e96fdbc6", size = 1968877 },
     { url = "https://files.pythonhosted.org/packages/16/16/b805c74b35607d24d37103007f899abc4880923b04929547ae68d478b7f4/pydantic_core-2.23.4-cp313-cp313-musllinux_1_1_x86_64.whl", hash = "sha256:ed541d70698978a20eb63d8c5d72f2cc6d7079d9d90f6b50bad07826f1320f5f", size = 2116814 },
-    { url = "https://files.pythonhosted.org/packages/d1/58/5305e723d9fcdf1c5a655e6a4cc2a07128bf644ff4b1d98daf7a9dbf57da/pydantic_core-2.23.4-cp313-none-win32.whl", hash = "sha256:3d5639516376dce1940ea36edf408c554475369f5da2abd45d44621cb616f769", size = 1738360 },
-    { url = "https://files.pythonhosted.org/packages/a5/ae/e14b0ff8b3f48e02394d8acd911376b7b66e164535687ef7dc24ea03072f/pydantic_core-2.23.4-cp313-none-win_amd64.whl", hash = "sha256:5a1504ad17ba4210df3a045132a7baeeba5a200e930f57512ee02909fc5c4cb5", size = 1919411 },
 ]
 
 [[package]]
@@ -3278,18 +3162,6 @@ wheels = [
 ]
 
 [[package]]
-name = "smart-open"
-version = "7.0.5"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "wrapt", marker = "sys_platform == 'linux'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/a3/d8/1481294b2d110b805c0f5d23ef34158b7d5d4283633c0d34c69ea89bb76b/smart_open-7.0.5.tar.gz", hash = "sha256:d3672003b1dbc85e2013e4983b88eb9a5ccfd389b0d4e5015f39a9ee5620ec18", size = 71693 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/06/bc/706838af28a542458bffe74a5d0772ca7f207b5495cd9fccfce61ef71f2a/smart_open-7.0.5-py3-none-any.whl", hash = "sha256:8523ed805c12dff3eaa50e9c903a6cb0ae78800626631c5fe7ea073439847b89", size = 61387 },
-]
-
-[[package]]
 name = "smmap"
 version = "5.0.1"
 source = { registry = "https://pypi.org/simple" }
@@ -3448,7 +3320,7 @@ wheels = [
 [[package]]
 name = "state-voterfiles"
 version = "0.1.0"
-source = { git = "https://github.com/Abstract-Data/state-voterfiles.git#014ba347e42afcdc341a5f74b2ea4240cb416d1e" }
+source = { git = "ssh://git@github.com/Abstract-Data/state-voterfiles.git#221c35e800c8f975a63903ddf178aed76fbfa302" }
 resolution-markers = [
     "python_full_version < '3.13' and sys_platform == 'linux'",
     "python_full_version >= '3.13' and sys_platform == 'linux'",
@@ -3468,7 +3340,7 @@ dependencies = [
     { name = "snowflake-sqlalchemy", marker = "sys_platform == 'linux'" },
     { name = "tenacity", marker = "sys_platform == 'linux'" },
     { name = "tqdm", marker = "sys_platform == 'linux'" },
-    { name = "vep-validation-tools", version = "0.1.0", source = { git = "https://github.com/Abstract-Data/vep-validation-tools.git#264cc20aa905ff37b102506d14443339fc610458" }, marker = "sys_platform == 'linux'" },
+    { name = "vep-validation-tools", version = "0.1.0", source = { git = "ssh://git@github.com/Abstract-Data/vep-validation-tools.git#7afaefcbb82e7926a493594f24af0b8f0258b6a2" }, marker = "sys_platform == 'linux'" },
     { name = "zipcodes", marker = "sys_platform == 'linux'" },
 ]
 
@@ -3516,7 +3388,7 @@ requires-dist = [
     { name = "tenacity", specifier = ">=8.1.0,<9" },
     { name = "tqdm", specifier = "==4.65.0" },
     { name = "vep-validation-tools", marker = "sys_platform == 'darwin'", editable = "../vep-validation-tools" },
-    { name = "vep-validation-tools", marker = "sys_platform == 'linux'", git = "https://github.com/Abstract-Data/vep-validation-tools.git" },
+    { name = "vep-validation-tools", marker = "sys_platform == 'linux'", git = "ssh://git@github.com/Abstract-Data/vep-validation-tools.git" },
     { name = "zipcodes", specifier = ">=1.2.0,<1.3.0" },
 ]
 
@@ -3808,7 +3680,7 @@ wheels = [
 [[package]]
 name = "vep-2024"
 version = "0.1.0"
-source = { git = "https://github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale#4a901b5436258650593d786be7dcaec2345d3409" }
+source = { git = "ssh://git@github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale#ae00e481cd5d9a639e9e8b7045511274a193dcd3" }
 resolution-markers = [
     "python_full_version < '3.13' and sys_platform == 'linux'",
     "python_full_version >= '3.13' and sys_platform == 'linux'",
@@ -3824,15 +3696,13 @@ dependencies = [
     { name = "fastapi", marker = "sys_platform == 'linux'" },
     { name = "fastui", marker = "sys_platform == 'linux'" },
     { name = "flatfile-mapping", marker = "sys_platform == 'linux'" },
-    { name = "gensim", marker = "sys_platform == 'linux'" },
     { name = "greenlet", marker = "sys_platform == 'linux'" },
     { name = "inject", marker = "sys_platform == 'linux'" },
     { name = "jupyter", marker = "sys_platform == 'linux'" },
     { name = "matplotlib", marker = "sys_platform == 'linux'" },
     { name = "memory-profiler", marker = "sys_platform == 'linux'" },
     { name = "mkdocs", marker = "sys_platform == 'linux'" },
-    { name = "mkdocstrings", version = "0.27.0", source = { registry = "https://pypi.org/simple" }, extra = ["python"], marker = "sys_platform == 'linux'" },
-    { name = "onepassword-sdk", version = "0.1.5", source = { git = "https://github.com/1Password/onepassword-sdk-python.git#5aedbaef2983bd5ccbff5a02107619b4d51dbc71" }, marker = "sys_platform == 'linux'" },
+    { name = "mkdocstrings", extra = ["python"], marker = "sys_platform == 'linux'" },
     { name = "opentelemetry-instrumentation-aiohttp-client", marker = "sys_platform == 'linux'" },
     { name = "opentelemetry-instrumentation-httpx", marker = "sys_platform == 'linux'" },
     { name = "opentelemetry-instrumentation-jinja2", marker = "sys_platform == 'linux'" },
@@ -3845,11 +3715,10 @@ dependencies = [
     { name = "polyfuzz", marker = "sys_platform == 'linux'" },
     { name = "pydantic-settings", marker = "sys_platform == 'linux'" },
     { name = "pyusps", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
     { name = "rich", marker = "sys_platform == 'linux'" },
     { name = "snowflake-connector-python", marker = "sys_platform == 'linux'" },
     { name = "sqlalchemy", marker = "sys_platform == 'linux'" },
-    { name = "state-voterfiles", version = "0.1.0", source = { git = "https://github.com/Abstract-Data/state-voterfiles.git#014ba347e42afcdc341a5f74b2ea4240cb416d1e" }, marker = "sys_platform == 'linux'" },
+    { name = "state-voterfiles", version = "0.1.0", source = { git = "ssh://git@github.com/Abstract-Data/state-voterfiles.git#221c35e800c8f975a63903ddf178aed76fbfa302" }, marker = "sys_platform == 'linux'" },
     { name = "streamlit", marker = "sys_platform == 'linux'" },
     { name = "tabulate", marker = "sys_platform == 'linux'" },
     { name = "twilio", marker = "sys_platform == 'linux'" },
@@ -3882,7 +3751,7 @@ dependencies = [
     { name = "matplotlib", marker = "sys_platform == 'darwin'" },
     { name = "memory-profiler", marker = "sys_platform == 'darwin'" },
     { name = "mkdocs", marker = "sys_platform == 'darwin'" },
-    { name = "mkdocstrings", version = "0.18.1", source = { registry = "https://pypi.org/simple" }, extra = ["python"], marker = "sys_platform == 'darwin'" },
+    { name = "mkdocstrings", extra = ["python"], marker = "sys_platform == 'darwin'" },
     { name = "opentelemetry-instrumentation-aiohttp-client", marker = "sys_platform == 'darwin'" },
     { name = "opentelemetry-instrumentation-httpx", marker = "sys_platform == 'darwin'" },
     { name = "opentelemetry-instrumentation-jinja2", marker = "sys_platform == 'darwin'" },
@@ -3941,7 +3810,7 @@ requires-dist = [
     { name = "snowflake-connector-python", specifier = ">=3.10.0,<4.0.0" },
     { name = "sqlalchemy", extras = ["asyncpg"], specifier = ">=2.0.34,<3.0.0" },
     { name = "state-voterfiles", marker = "sys_platform == 'darwin'", editable = "../state-voterfiles" },
-    { name = "state-voterfiles", marker = "sys_platform == 'linux'", git = "https://github.com/Abstract-Data/state-voterfiles.git" },
+    { name = "state-voterfiles", marker = "sys_platform == 'linux'", git = "ssh://git@github.com/Abstract-Data/state-voterfiles.git" },
     { name = "streamlit", specifier = ">=1.29.0,<2.0.0" },
     { name = "tabulate", specifier = ">=0.9.0,<0.10.0" },
     { name = "twilio", specifier = ">=9.2.3,<10.0.0" },
@@ -3954,31 +3823,28 @@ name = "vep-2024-data-shaping"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "onepassword-sdk", version = "0.1.5", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux'" },
-    { name = "onepassword-sdk", version = "0.1.5", source = { git = "https://github.com/1Password/onepassword-sdk-python.git#5aedbaef2983bd5ccbff5a02107619b4d51dbc71" }, marker = "sys_platform == 'linux'" },
     { name = "polars" },
-    { name = "vep-2024", version = "0.1.0", source = { git = "https://github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale#4a901b5436258650593d786be7dcaec2345d3409" }, marker = "sys_platform == 'linux'" },
+    { name = "vep-2024", version = "0.1.0", source = { git = "ssh://git@github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale#ae00e481cd5d9a639e9e8b7045511274a193dcd3" }, marker = "sys_platform == 'linux'" },
     { name = "vep-2024", version = "0.1.0", source = { editable = "../vep-2024" }, marker = "sys_platform == 'darwin'" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "onepassword-sdk", specifier = ">=0.1.5" },
     { name = "polars", specifier = ">=1.16.0" },
     { name = "vep-2024", marker = "sys_platform == 'darwin'", editable = "../vep-2024" },
-    { name = "vep-2024", marker = "sys_platform == 'linux'", git = "https://github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale" },
+    { name = "vep-2024", marker = "sys_platform == 'linux'", git = "ssh://git@github.com/Abstract-Data/vep-2024.git?branch=disobey-grumpy-kale" },
 ]
 
 [[package]]
 name = "vep-validation-tools"
 version = "0.1.0"
-source = { git = "https://github.com/Abstract-Data/vep-validation-tools.git#264cc20aa905ff37b102506d14443339fc610458" }
+source = { git = "ssh://git@github.com/Abstract-Data/vep-validation-tools.git#7afaefcbb82e7926a493594f24af0b8f0258b6a2" }
 resolution-markers = [
     "python_full_version < '3.13' and sys_platform == 'linux'",
     "python_full_version >= '3.13' and sys_platform == 'linux'",
 ]
 dependencies = [
-    { name = "election-utils", version = "0.1.0", source = { git = "https://github.com/jreakin/jre-election-utils.git#8f5756d300ccf62fecf46ba7a663c804b5bb900d" }, marker = "sys_platform == 'linux'" },
+    { name = "election-utils", version = "0.1.0", source = { git = "ssh://git@github.com/jreakin/jre-election-utils.git#d870bf0bee76be81c2ab6a8f17b16d59c4f283a7" }, marker = "sys_platform == 'linux'" },
     { name = "pandas", marker = "sys_platform == 'linux'" },
     { name = "phonenumbers", marker = "sys_platform == 'linux'" },
     { name = "rapidfuzz", marker = "sys_platform == 'linux'" },
@@ -3996,7 +3862,7 @@ resolution-markers = [
     "python_full_version >= '3.13' and sys_platform == 'darwin'",
 ]
 dependencies = [
-    { name = "election-utils", version = "0.1.0", source = { editable = "../election-utils" }, marker = "sys_platform == 'darwin'" },
+    { name = "election-utils", version = "0.1.0", source = { git = "ssh://git@github.com/Abstract-Data/state-voterfiles.git?subdirectory=..%2F..%2F..%2F..%2F..%2F..%2FPyCharmProjects%2Felection-utils#221c35e800c8f975a63903ddf178aed76fbfa302" }, marker = "sys_platform == 'darwin'" },
     { name = "pandas", marker = "sys_platform == 'darwin'" },
     { name = "phonenumbers", marker = "sys_platform == 'darwin'" },
     { name = "rapidfuzz", marker = "sys_platform == 'darwin'" },
@@ -4007,8 +3873,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "election-utils", marker = "sys_platform == 'darwin'", editable = "../election-utils" },
-    { name = "election-utils", marker = "sys_platform == 'linux'", git = "https://github.com/jreakin/jre-election-utils.git" },
+    { name = "election-utils", marker = "sys_platform == 'darwin'", git = "ssh://git@github.com/Abstract-Data/state-voterfiles.git?subdirectory=..%2F..%2F..%2F..%2F..%2F..%2FPyCharmProjects%2Felection-utils" },
+    { name = "election-utils", marker = "sys_platform == 'linux'", git = "ssh://git@github.com/jreakin/jre-election-utils.git" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "phonenumbers", specifier = ">=8.13.52" },
     { name = "rapidfuzz", specifier = ">=3.10.1" },
